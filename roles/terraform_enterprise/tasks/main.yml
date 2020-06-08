@@ -30,7 +30,6 @@
     mode: '0777'
     owner: root
     group: root
-    
 
 - name: license.rli | Create the license file to be used for Terraform Enterprise
   copy:
