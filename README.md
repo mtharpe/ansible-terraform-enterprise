@@ -27,8 +27,8 @@ This is designed to be edited per use, the tasks will work for your needs but yo
 
 Maintainer:: HashiCorp (<hello@hashicorp.com>)
 
-Source:: https://github.com/mtharpe/chef-terraform-enterprise
+Source:: https://github.com/mtharpe/ansible-terraform-enterprise
 
-Issues:: https://github.com/mtharpe/chef-terraform-enterprise/issues
+Issues:: https://github.com/mtharpe/ansible-terraform-enterprise/issues
 
 License:: Apache-2.0
