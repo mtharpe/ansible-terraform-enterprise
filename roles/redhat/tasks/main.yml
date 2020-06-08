@@ -1,0 +1,41 @@
+---
+- name: extra-rpms | Install Server Extras extra-rpm
+  shell:
+    cmd: yum-config-manager --enable rhel-7-server-extras-rpms
+
+- name: yum-utils | Install yum-utils for docker install
+  package:
+    name: yum-utils
+    state: present
+
+- name: docker | Install Docker from extras
+  yum:
+    state: absent
+    name:
+      - docker
+      - docker-client
+      - docker-client-latest
+      - docker-common
+      - docker-latest
+      - docker-latest-logrotate
+      - docker-selinux
+      - docker-engine-selinux
+      - docker-engine
+
+- name: docker_repo | Add Docker repo
+  shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  run_once: true
+
+- name: install_docker | Install Docker-CE
+  yum:
+    name:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+    state: present
+
+- name: docker.service | Enable/Start Docker service
+  systemd:
+    name: docker.service
+    state: started
+    enabled: yes
