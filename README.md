@@ -1,4 +1,4 @@
-[![pipeline status](https://gitlab.com/ansible-playbooks4/terraform_enterprise/badges/master/pipeline.svg)](https://gitlab.com/ansible-playbooks4/terraform_enterprise/-/commits/master)
+![Ansible Lint](https://github.com/mtharpe/ansible-terraform-enterprise/workflows/Ansible%20Lint/badge.svg)
 
 #  Description
 
