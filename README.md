@@ -4,6 +4,8 @@
 
 This Ansible playbook installs and configures Terraform enterprise in a fully automated fashion. There are some requirements, but overall this is very simple to work with.
 
+This is designed to be edited per use, the tasks will work for your needs but you will want to update the playbook info to ensure you have what you need.
+
 ## Requirements:
 
 - Ansible 2.x
