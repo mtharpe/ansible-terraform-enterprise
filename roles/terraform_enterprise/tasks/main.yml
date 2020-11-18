@@ -35,6 +35,9 @@
   copy:
     src: license.rli
     dest: /etc/terraform.d/license.rli
+    mode: '0655'
+    owner: root
+    group: root
 
 - name: install.sh | Execute the install.sh to install Terraform Enterprise
   shell: /tmp/install.sh no-proxy private-address={{ ansible_eth0.ipv4.address }} public-address={{ ansible_eth0.ipv4.address }}
