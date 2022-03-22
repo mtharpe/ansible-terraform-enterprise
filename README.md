@@ -1,3 +1,5 @@
+[![SonarQube](https://github.com/mtharpe/ansible-terraform-enterprise/actions/workflows/sonarqube.yml/badge.svg)](https://github.com/mtharpe/ansible-terraform-enterprise/actions/workflows/sonarqube.yml)
+
 [![CircleCI](https://circleci.com/gh/mtharpe/ansible-terraform-enterprise/tree/master.svg?style=svg)](https://circleci.com/gh/mtharpe/ansible-terraform-enterprise/tree/master)
 
 
