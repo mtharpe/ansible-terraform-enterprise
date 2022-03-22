@@ -1,4 +1,5 @@
 ---
+
 - name: terraform.d | Create terraform.d directory in /etc
   file:
     path: /etc/terraform.d
@@ -47,3 +48,4 @@
 - name: sleep | Finalize and wait for Terraform to come up
   shell: sleep 625
   when: result.changed
+
