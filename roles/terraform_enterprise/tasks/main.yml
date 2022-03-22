@@ -1,7 +1,7 @@
 ---
 
 - name: terraform.d | Create terraform.d directory in /etc
-  file:
+  ansible.builtin.file:
     path: /etc/terraform.d
     state: directory
     mode: '0755'
@@ -9,7 +9,7 @@
     group: root
 
 - name: replicated.conf | Copy the replicated.conf template file
-  template:
+  ansible.builtin.template:
     src: replicated.conf.j2
     dest: /etc/replicated.conf
     mode: '0655'
@@ -17,7 +17,7 @@
     group: root
 
 - name: settings.json | Create the replicated settings.json file in /etc/terraform.d
-  template:
+  ansible.builtin.template:
     src: settings.json.j2
     dest: /etc/terraform.d/settings.json
     mode: '0655'
@@ -25,7 +25,7 @@
     group: root
 
 - name: install.sh | Download the Terraform Enterprise Installer
-  get_url:
+  ansible.builtin.get_url:
     url: https://install.terraform.io/ptfe/stable
     dest: /tmp/install.sh
     mode: '0777'
@@ -33,7 +33,7 @@
     group: root
 
 - name: license.rli | Create the license file to be used for Terraform Enterprise
-  copy:
+  ansible.builtin.copy:
     src: license.rli
     dest: /etc/terraform.d/license.rli
     mode: '0655'
@@ -41,11 +41,11 @@
     group: root
 
 - name: install.sh | Execute the install.sh to install Terraform Enterprise
-  shell: /tmp/install.sh no-proxy private-address={{ ansible_eth0.ipv4.address }} public-address={{ ansible_eth0.ipv4.address }}
+  ansible.builtin.shell: /tmp/install.sh no-proxy private-address={{ ansible_eth0.ipv4.address }} public-address={{ ansible_eth0.ipv4.address }}
   run_once: true
   register: result
 
 - name: sleep | Finalize and wait for Terraform to come up
-  shell: sleep 625
+  ansible.builtin.shell: sleep 625
   when: result.changed
 
