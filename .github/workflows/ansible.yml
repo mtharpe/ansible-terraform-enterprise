@@ -8,6 +8,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Lint Ansible Playbook
-      uses: ansible/ansible-lint-action@4.3.7
+      uses: ansible/ansible-lint-action@4.1.0
       with:
         args: "-q"
