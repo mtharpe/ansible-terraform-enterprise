@@ -1,4 +1,4 @@
-![Ansible Lint](https://github.com/mtharpe/ansible-terraform-enterprise/workflows/Ansible%20Lint/badge.svg)
+[![CircleCI](https://circleci.com/gh/mtharpe/ansible-terraform-enterprise/tree/master.svg?style=svg)](https://circleci.com/gh/mtharpe/ansible-terraform-enterprise/tree/master)
 
 
 #  Description
