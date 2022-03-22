@@ -1,5 +1,6 @@
 ![Ansible Lint](https://github.com/mtharpe/ansible-terraform-enterprise/workflows/Ansible%20Lint/badge.svg)
 
+
 #  Description
 
 This Ansible playbook installs and configures Terraform enterprise in a fully automated fashion. There are some requirements, but overall this is very simple to work with.
