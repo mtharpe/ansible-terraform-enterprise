@@ -1,14 +1,14 @@
 name: Ansible lint
 
-  on: [push]
+on: [push]
 
-  jobs:
-   build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: checkout repo
-        - uses: actions/checkout@v2
-        - name: ansible-lint
-          uses: ansible/ansible-lint-action@master
-          with:
-            targets: ""
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+      - uses: actions/checkout@v2
+      - name: ansible-lint
+        uses: ansible/ansible-lint-action@master
+        with:
+          targets: ""
