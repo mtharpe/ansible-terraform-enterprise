@@ -10,7 +10,4 @@ jobs:
     - name: Lint Ansible Playbook
       uses: ansible/ansible-lint-action@main
       with:
-        targets: "./"
-        override-deps: |
-          ansible-lint==4.3.7
         args: "-q"
