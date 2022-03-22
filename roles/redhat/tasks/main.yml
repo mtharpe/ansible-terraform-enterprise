@@ -29,9 +29,9 @@
 - name: install_docker | Install Docker-CE
   ansible.builtin.yum:
     name:
-    - docker-ce
-    - docker-ce-cli
-    - containerd.io
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
     state: present
 
 - name: docker.service | Enable/Start Docker service
@@ -39,3 +39,4 @@
     name: docker.service
     state: started
     enabled: yes
+
