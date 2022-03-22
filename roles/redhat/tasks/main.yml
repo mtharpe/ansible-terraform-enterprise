@@ -1,15 +1,15 @@
 ---
 - name: extra-rpms | Install Server Extras extra-rpm
-  shell:
+  ansible.builtin.shell:
     cmd: yum-config-manager --enable rhel-7-server-extras-rpms
 
 - name: yum-utils | Install yum-utils for docker install
-  package:
+  ansible.builtin.package:
     name: yum-utils
     state: present
 
 - name: docker | Install Docker from extras
-  yum:
+  ansible.builtin.yum:
     state: absent
     name:
       - docker
@@ -23,11 +23,11 @@
       - docker-engine
 
 - name: docker_repo | Add Docker repo
-  shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  ansible.builtin.shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
   run_once: true
 
 - name: install_docker | Install Docker-CE
-  yum:
+  ansible.builtin.yum:
     name:
     - docker-ce
     - docker-ce-cli
@@ -35,7 +35,7 @@
     state: present
 
 - name: docker.service | Enable/Start Docker service
-  systemd:
+  ansible.builtin.systemd:
     name: docker.service
     state: started
     enabled: yes
