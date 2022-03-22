@@ -1,14 +1,16 @@
-name: Ansible lint
+name: Ansible Lint
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-      - uses: actions/checkout@v2
-      - name: ansible-lint
-        uses: ansible/ansible-lint-action@master
-        with:
-          targets: ""
+    - uses: actions/checkout@v2
+    - name: Lint Ansible Playbook
+      uses: ansible/ansible-lint-action@master
+      with:
+        targets: "./"
+        override-deps: |
+          ansible-lint==5.3.2
+        args: "-q"
